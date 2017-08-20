@@ -9,12 +9,12 @@ class GuessBoard:
 
 class GuessRuleBook:
 
-    def GetNewBoard(boardOptions):
-        min = (boardOptions and boardOptions[min]) or 1
-        max = (boardOptions and boardOptions[max]) or 6
+    def GetNewBoard():
+        min = 1
+        max = 6
         if not isinstance(min, int): raise ValueError(f"min must be a whole number: {min}")
         if not isinstance(max, int): raise ValueError(f"max must be a whole number: {max}")
-        if min > max: raise ValueError(f"min () must not be greater than max ()")
+        if min > max: raise ValueError(f"min:{min} must not be greater than max:{max}")
         target = random.randint(min, max)
         return GuessBoard(min, max, target)
 
@@ -22,6 +22,6 @@ class GuessRuleBook:
 print("Let's Play!")
 
 ruleBook = GuessRuleBook
-board = ruleBook.GetNewBoard(None)
+board = ruleBook.GetNewBoard()
 
 print(board.target)
