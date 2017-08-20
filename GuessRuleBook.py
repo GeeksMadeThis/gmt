@@ -15,7 +15,7 @@ class GuessRuleBook:
         if not isinstance(min, int): raise ValueError(f"min must be a whole number: {min}")
         if not isinstance(max, int): raise ValueError(f"max must be a whole number: {max}")
         if min > max: raise ValueError(f"min:{min} must not be greater than max:{max}")
-        target = random.randint(min, max)
+        target = # put something here.
         return GuessBoard(min, max, target)
 
 
